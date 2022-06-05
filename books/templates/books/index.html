@@ -1,0 +1,21 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+<div id="outer">
+<div id="header">
+<p class="description">システムにて管理中の書籍一覧</p>
+</div>
+<div id="contents">
+    {% if book_list %}
+    <ul>
+    {% for book in book_list %}
+        <li><a href="/books/sample/{{ book.id }}/">{{ book.title }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>ダッシュボードアイコンから一覧更新してください.</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

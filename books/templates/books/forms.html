@@ -1,0 +1,10 @@
+{% extends 'books/index.html' %}
+
+{% block content %}
+  <h1>書籍の持ち出し申請</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">投稿する</button>
+  </form>
+{% endblock %}

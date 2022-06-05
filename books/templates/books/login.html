@@ -1,0 +1,21 @@
+{% extends "books/base.html" %}
+
+{% block content %}
+<div class="reg">
+  <form method="post" action="{% url 'Login' %}">
+    {% csrf_token %}
+
+    <table class="reg_form">
+    <tr>
+    <td><label for="userid">ユーザーID:</label></td>
+    <td><input type="text" name="userid"></td>
+    <td><label for="password">パスワード：</label></td>
+    <td><input type="password" name="password"></td>
+    </tr>
+    </table>
+
+    <input type="submit" class="btn" value="Login">
+ </form>
+</div>
+
+{% endblock %} 
