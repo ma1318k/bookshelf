@@ -84,15 +84,10 @@
 - history(table_id, table_name, target_book, create_user,is_lending, created_at, updated_at)
 
 
-## 画面一覧
+## 画面一覧、仕様
 ※上述URLを公開予定のため割愛
 
-- システム概要
-- システム構成
-- 機能一覧
-- 画面一覧
-- テーブル定義書
-- 画面仕様書
+
 ## WEB APIインターフェース仕様書
 ※Django REST frameworkにてBookモデルCRUD機能を実装  
 ※Userモデルは工数削減のためDjango標準のUserを利用
