@@ -8,6 +8,3 @@ class HistoryForm(forms.ModelForm) :
        fields=(
            "table_name",
            )
-    #    labels = [
-    #        {"コメント(ブランク可)","部屋名"}
-    #        ]

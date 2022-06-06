@@ -1,14 +1,10 @@
-from django.views.generic import TemplateView #テンプレートタグ
-# from .forms import AccountForm, AddAccountForm #ユーザーアカウントフォーム
-
 # ログイン・ログアウト処理に利用
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
-
-from django.http import Http404
+# from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User, Group
@@ -18,8 +14,6 @@ from .serializers import BookSerializer
 from .models import Book
 
 from .forms import HistoryForm
-from django.views.generic.edit import FormView
-import pprint
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -48,8 +42,6 @@ class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     permission_classes = [permissions.AllowAny]
 
-
-    
 
 def index(request):
     queryset = Book.objects.all()
@@ -102,7 +94,6 @@ def Login(request):
         return render(request, 'books/login.html')
 
 
-#ログアウト
 @login_required
 def Logout(request):
     logout(request)
@@ -110,24 +101,11 @@ def Logout(request):
     return HttpResponseRedirect(reverse('Login'))
 
 
-#ホーム
 @login_required
 def home(request):
     params = {"UserID":request.user,}
     return render(request, "books/home.html",context=params)
 
-
-# class TebleCrateView(FormView):
-#    form_class = GameTableForm
-#    template_name = 'books/forms.html'
-#    # フォームの値が正しいかどうかの検証をして　検証が通ったら実行される部分だよ
-#    #
-#    def form_valid(self, form):
-#        qryset =  form.save(commit=False)
-#        qryset.create_user=self.request.user
-#        qryset.save()
-#        pprint(qryset)
-#        return HttpResponse('FormValid') 
 
 def formfunc(request, book_id):
     if request.method == 'POST':
@@ -138,7 +116,6 @@ def formfunc(request, book_id):
             book = get_object_or_404(Book, pk=book_id)
             post.target_book= book.title
             post.save()
-            # return HttpResponse("書籍の貸し出し手続き完了") 
             context = {results:"書籍の貸し出し手続き完了"}
             return render(request, 'books/index.html', context)
     else:

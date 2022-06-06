@@ -1,7 +1,6 @@
-import datetime
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.utils import timezone
+# from django.utils import timezone
 
 
 class Book(models.Model):
@@ -15,11 +14,6 @@ class Book(models.Model):
         return str(self.isbn) + self.title
 
 
-# class History(models.Model):
-#    table_id = models.AutoField(primary_key= True)
-#    pub_date = models.DateTimeField(max_length = 255)
-#    create_user = models.ForeignKey(get_user_model(),on_delete=models.CASCADE)
-   
 class History(models.Model):
     table_id = models.AutoField(primary_key= True)
     table_name = models.CharField(max_length = 255)

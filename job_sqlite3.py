@@ -1,19 +1,10 @@
 import sqlite3
 import requests
 import xml.etree.ElementTree as et
-from pyzbar.pyzbar import decode
 
 
 class WriteDB:
-
-    # def cam_capture(self):
-    #     db = OrenoDataBase()
-
-    #     result = self.fetch_book_data('isbn_no')
-    #     db.set(result)
-
-    #     db.close()
-
+    
     def fetch_book_data(self, isbn):
         endpoint = 'https://iss.ndl.go.jp/api/sru'
         params = {'operation': 'searchRetrieve',
