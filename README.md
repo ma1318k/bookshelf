@@ -37,9 +37,9 @@
 7 | 書籍貸し出し情報登録| 書籍貸し出し状況を更新する|会員|書籍の貸し出し申請
 
 > 非機能要件
-- 可用性／稼働率：年間のうち数日程度の停止は許容とする
-- 可用性／目標復旧水準：データのリカバリを伴う復旧では、週次のバックアップからの復旧とする
-- 可用性／大規模災害時：システムの再構築による復旧を前提とする
+- 稼働率：年間のうち数日程度の停止は許容とする
+- 目標復旧水準：データのリカバリを伴う復旧では、週次のバックアップからの復旧とする
+- 大規模災害時：システムの再構築による復旧を前提とする
 - 性能目標・拡張性：同時多数アクセスを想定せず、他の要求より重視しない
 - 運用・保守性：システムメンテナンスのための停止を許容とする
 - セキュリティ：権限にてアクセス制限付きのシステムとする
@@ -77,10 +77,9 @@
 
 
 ## テーブル定義
-- books (isbn_no,title,3,4,5)
-- book_detail (1,2,3,4,5)
-- user(mail_adress)
-- history(book,user,bring_date)
+- book (isbn_no, title, creator, publisher, subject)
+- user(name..)
+- history(table_id, table_name, target_book, create_user,is_lending, created_at, updated_at)
 
 
 ## 画面一覧
@@ -93,7 +92,7 @@
 - テーブル定義書
 - 画面仕様書
 ## WEB APIインターフェース仕様書
-※Django REST frameworkにてBookモデルCRUD機能を実装
+※Django REST frameworkにてBookモデルCRUD機能を実装  
 ※Userモデルは工数削減のためDjango標準のUserを利用
 
 
