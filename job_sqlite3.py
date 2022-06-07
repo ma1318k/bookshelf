@@ -3,6 +3,13 @@ import requests
 import xml.etree.ElementTree as et
 
 
+from pathlib import Path
+import os
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+
 class WriteDB:
     
     def fetch_book_data(self, isbn):
@@ -28,7 +35,8 @@ class WriteDB:
 class OrenoDataBase:
 
     def __init__(self):
-        self.conn = sqlite3.connect(r'.\db.sqlite3')
+        # self.conn = sqlite3.connect(os.path.join(BASE_DIR, 'db.sqlite3'))       
+        self.conn = sqlite3.connect(r'db.sqlite3')
         self.conn.row_factory = sqlite3.Row
         self.cur = self.conn.cursor()
 
