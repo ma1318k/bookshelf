@@ -6,5 +6,5 @@ class HistoryForm(forms.ModelForm) :
    class Meta :
        model = History
        fields=(
-           "table_name",
+        #    "table_name",
            )

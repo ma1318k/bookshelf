@@ -115,6 +115,7 @@ def formfunc(request, book_id):
             post.create_user = request.user
             book = get_object_or_404(Book, pk=book_id)
             post.target_book= book.title
+            post.table_name= book.title
             post.save()
             context = {results:"書籍の貸し出し手続き完了"}
             return render(request, 'books/index.html', context)
