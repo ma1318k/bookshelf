@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 
 
 class Book(models.Model):
-    isbn = models.PositiveIntegerField()
+    isbn = models.BigIntegerField()
     title = models.CharField(max_length=255)
     creator = models.CharField(max_length=255)
     publisher = models.CharField(max_length=255)
