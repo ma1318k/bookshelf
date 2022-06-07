@@ -102,11 +102,11 @@ test_user | passuser
 
 
 ## 開発環境
-- OS:Windows 10
+- OS:Windows 10, mac OS
 - DB：SQLite3
-- 言語:Python3
+- 言語:Python3.10
 - フレームワーク：Django
-- ライブラリ:cv2, flake8, black, pytest
+- ライブラリ:django-heroku, gunicorn, whitenoise, djangorestframework, django-cors-headers
 - ツール：Visual Studio Code
 
 ## ローカルでの動作方法
