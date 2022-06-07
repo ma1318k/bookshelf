@@ -24,8 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'django-insecure--n3%+2zpmi0zc^pyv@=ui41zzm42jkbt6=*e&+*+xkx*gcr#&1'
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
@@ -176,7 +174,15 @@ CORS_ALLOW_CREDENTIALS = True
 LOGIN_REDIRECT_URL = '/books/sample/'
 LOGOUT_REDIRECT_URL = '/books'
 
+DEBUG = False
+# 追加
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
 # Activate Django-Heroku.
 import django_heroku
-django_heroku.settings(locals())
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
