@@ -9,7 +9,7 @@
 （※このプロジェクトはフィクションであり、実在の人物・団体とは一切関係ありません）
 
 ## URL
-https://django-bookshelf.herokuapp.com/books/
+<a href="https://django-bookshelf.herokuapp.com/books/" target="_blank">https://django-bookshelf.herokuapp.com/books/</a>
 
 
 ## テスト用アカウント(権限：会員)
