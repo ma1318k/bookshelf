@@ -9,7 +9,15 @@
 （※このプロジェクトはフィクションであり、実在の人物・団体とは一切関係ありません）
 
 ## URL
-※開発中のため現在は非公開
+https://django-bookshelf.herokuapp.com/books/
+
+
+## テスト用アカウント(権限：会員)
+
+ID | Password
+-|-
+test_user | passuser
+
 
 ## 利用方法
 > 管理者
@@ -92,12 +100,6 @@
 ※Django REST frameworkにてBookモデルCRUD機能を実装  
 ※Userモデルは工数削減のためDjango標準のUserを利用
 
-
-## テスト用アカウント(権限：会員)
-
-ID | Password
--|-
-test_user | passuser
 
 ## 開発環境
 - OS:Windows 10
