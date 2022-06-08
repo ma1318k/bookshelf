@@ -117,7 +117,10 @@ def formfunc(request, book_id):
             post.target_book= book.title
             post.table_name= book.title
             post.save()
-            context = {results:"書籍の貸し出し手続き完了"}
+            context = {'results':'''
+                       書籍の貸し出し手続き完了。\n
+                       管理側に記録されましたので、持ち出し可能です。\n
+                       書籍の返却時は管理者に別途ご連絡ください。'''}
             return render(request, 'books/index.html', context)
     else:
         form = HistoryForm()

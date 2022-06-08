@@ -15,13 +15,14 @@
 <body>
   <header>
       <div>
-        <p>DjangoBookShelf</p>
+        <p>BookShelf APP</p>
       </div>
       <div>
         {% if user.is_authenticated %}
-        <p>こんにちは {{ user.username }}    <a href="{% url 'logout'%}">ログアウト</a></p>
+        <p>こんにちは {{ user.username }}    <a href="{% url 'Logout'%}">ログアウト</a></p>
         {% else %}
-        <p><a href="{% url 'login' %}">ログイン</a></p>
+        <!-- <p><a href="{% url 'login' %}">ログイン</a></p> -->
+        <p><a href="{% url 'Login' %}">ログイン</a></p>
         {% endif %}
       </div>
       <div>
@@ -32,12 +33,13 @@
     <nav id="nav-left">
       <div id="nav">
         <ul id="nav-ul">
-          <li class="nav-li"><a href="{% url 'index' %}" class="nav-li-a"><i class="fa fa-tachometer" style="margin-right:15px"></i>Dashboard</a></li>
-          <li class="nav-li"><a href="#" class="nav-li-a"><i class="fas fa-list" style="margin-right:15px"></i>App1</a></li>
           {% if user.is_authenticated %}
-          <!-- <li class="nav-li"><a href="#" class="nav-li-a"><i class="fas fa-server" style="margin-right:15px"></i>User Settings</a></li> -->
+          <li class="nav-li"><a href="{% url 'index' %}" class="nav-li-a"><i class="fa fa-tachometer" style="margin-right:15px"></i>Dashboard</a></li>
+            {% if user.is_staff %}
+            <li class="nav-li"><a href="/admin" class="nav-li-a"><i class="fa fa-tachometer" style="margin-right:15px"></i>Django_Admin_site</a></li>
+            {% endif %}
           {% endif %}
-        </ul>
+          </ul>
       </div>
     </nav>
     <main id="main">
@@ -47,7 +49,7 @@
 
   <div id="middle">
 
-    <div id="footer">© 2022 KK_sampleApp</div>
+    <div id="footer">© 2022 KK_sampleApp  ※【Django_works_now】</div>
   </div>
 </body>
 </html>

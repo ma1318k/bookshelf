@@ -19,7 +19,7 @@ class History(models.Model):
     table_name = models.CharField(max_length = 255)
     target_book = models.CharField(max_length=255)
     create_user = models.ForeignKey(get_user_model(),on_delete=models.CASCADE, related_name='user')
-    is_lending = models.BooleanField(default=True, help_text='貸し出し中ならTrue')
+    is_lending = models.BooleanField(default=True, help_text='貸し出し中ならTrue ※返却時は管理者に問合わせください')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
    

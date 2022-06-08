@@ -3,17 +3,22 @@
 {% block content %}
 <div id="outer">
 <div id="header">
-<p class="description">システムにて管理中の書籍一覧</p>
+<p class="description"></p>
 </div>
 <div id="contents">
     {% if book_list %}
+    <p>システムにて管理中の書籍一覧</p>
     <ul>
     {% for book in book_list %}
         <li><a href="/books/sample/{{ book.id }}/">{{ book.title }}</a></li>
     {% endfor %}
     </ul>
-    {% else %}
-        <p>ダッシュボードアイコンから一覧更新してください.</p>
+    {% elif results %}
+    <p>{{results|linebreaksbr}}</p>
+    <br>
+    <p>次の操作に進む場合、左のダッシュボードアイコンからお進みください.</p>
+    {% else %} 
+    <p>左のダッシュボードアイコンからお進みください.</p>
     {% endif %}
 
 </div>
