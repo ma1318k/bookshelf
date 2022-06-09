@@ -116,3 +116,5 @@ test_user | passuser
 >cd bookshelf  
 >python manage.py makemigrations books  
 >python manage.py migrate
+>python manage.py runserver
+>URL：http://127.0.0.1:8000/books
