@@ -163,9 +163,9 @@ REST_FRAMEWORK = {
 # CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8081',
-    # 'http://localhost:8080',
-)
+    # 'http://localhost:8081',
+     'http://localhost:8080',
+ )
 
 # レスポンスを公開する
 CORS_ALLOW_CREDENTIALS = True
