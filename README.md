@@ -23,7 +23,8 @@
 
 ## URL
 <a href="https://django-bookshelf.herokuapp.com/books/" target="_blank"><s>https://django-bookshelf.herokuapp.com/books/</s></a>
-
+<br>
+<a href="https://ma1318.pythonanywhere.com/sample/">https://ma1318.pythonanywhere.com/sample/</a>
 
 ## テスト用アカウント(権限：会員)
 
