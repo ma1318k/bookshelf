@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
   <title>DjangoMyAppSample</title>
   <link rel="stylesheet" type="text/css"  href="{% static 'books/css/common.css' %}" />
+  <!-- <link rel="stylesheet" type="text/css"  href="{% static 'books/css/style.css' %}" /> -->
   <script src="https://kit.fontawesome.com/d86c726e71.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,12 +18,12 @@
       <div>
         <p>BookShelf APP</p>
       </div>
-      <div>
+      <div class="arign-right">
         {% if user.is_authenticated %}
-        <p>こんにちは {{ user.username }}    <a href="{% url 'Logout'%}">ログアウト</a></p>
+        <p>こんにちは {{ user.username }}    <a class="button" href="{% url 'Logout'%}">ログアウト</a></p>
         {% else %}
         <!-- <p><a href="{% url 'login' %}">ログイン</a></p> -->
-        <p><a href="{% url 'Login' %}">ログイン</a></p>
+        <!-- <p><a class="button" href="{% url 'Login' %}">ログイン</a></p> -->
         {% endif %}
       </div>
       <div>

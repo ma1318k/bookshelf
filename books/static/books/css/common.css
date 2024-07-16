@@ -76,7 +76,17 @@ html *{
 
   h2{
     margin:20px 0;
-}
+  }
+  .button {
+    display: inline-block;
+    border-style: solid;
+    color: black;
+    background-color: rgb(225, 224, 224);
+    border-width:1px;
+    border-color: darkgray;
+    text-decoration: none;
+  }
+
 header{
     display:flex;
     justify-content: space-between;
@@ -84,3 +94,7 @@ header{
     box-shadow: 0px 0px 5px 0px hsla(0, 0%, 7%, 0.3);
     padding:0 20px 0;
 }
+
+.arign-right {
+	text-align: right;
+  }

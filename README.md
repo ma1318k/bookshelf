@@ -22,7 +22,7 @@
 
 
 ## URL
-<a href="https://django-bookshelf.herokuapp.com/books/" target="_blank">https://django-bookshelf.herokuapp.com/books/</a>
+<a href="https://django-bookshelf.herokuapp.com/books/" target="_blank"><s>https://django-bookshelf.herokuapp.com/books/</s></a>
 
 
 ## テスト用アカウント(権限：会員)
@@ -114,6 +114,7 @@ test_user | passuser
 ## ローカルでの動作方法
 >git clone ~  
 >cd bookshelf  
+>pip install -r requirements.txt
 >python manage.py makemigrations books  
 >python manage.py migrate  
 >python manage.py runserver  
